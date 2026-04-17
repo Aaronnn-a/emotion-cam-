@@ -137,6 +137,9 @@ export default function App() {
 
   return (
     <div className="page">
+      <div className="topbar">
+        <a href="https://aaronashraf.com" className="backlink">AA/</a>
+      </div>
       <header className="header">
         <div>
           <div className="title">Real-Time Emotion Detection</div>
@@ -194,9 +197,6 @@ export default function App() {
         </section>
       </main>
 
-      <footer className="footer">
-        <span className="small">Hinweis: Kamera bleibt im Browser, nur Frames gehen an dein Backend.</span>
-      </footer>
     </div>
   );
 }
