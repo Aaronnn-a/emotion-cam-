@@ -7,7 +7,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from backend.emotion import EmotionDetector, decode_data_url, decode_image_bytes
+from emotion import EmotionDetector, decode_data_url, decode_image_bytes
 
 
 class AnalyzeDataUrlRequest(BaseModel):
