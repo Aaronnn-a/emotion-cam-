@@ -5,7 +5,7 @@ const DEFAULT_API_BASE = import.meta.env?.VITE_API_BASE || "http://127.0.0.1:800
 
 function formatPercent(x) {
   if (typeof x !== "number" || Number.isNaN(x)) return "-";
-  return `${Math.round(x * 100)}%`;
+  return Math.round(x * 100) + "%";
 }
 
 function sleep(ms) {
