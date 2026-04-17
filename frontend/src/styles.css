@@ -1,22 +1,19 @@
 :root {
-  color-scheme: dark;
-  --bg: #0b1020;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel2: rgba(255, 255, 255, 0.09);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.7);
+  --bg: #000000;
+  --panel: #111111;
+  --panel2: #0f0f0f;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.5);
   --danger: #ff5c7a;
-  --accent: #6ae4ff;
-  --border: rgba(255, 255, 255, 0.12);
+  --accent: #ccff00;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 html, body {
   height: 100%;
   margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  background: radial-gradient(1200px 600px at 20% 0%, rgba(106, 228, 255, 0.12), transparent),
-              radial-gradient(900px 500px at 80% 10%, rgba(255, 92, 122, 0.10), transparent),
-              var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
   color: var(--text);
 }
 
@@ -31,17 +28,17 @@ html, body {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding: 18px 18px;
+  padding: 18px 20px;
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  background: var(--panel);
   border-radius: 16px;
-  backdrop-filter: blur(10px);
 }
 
 .title {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 20px;
   letter-spacing: 0.2px;
+  color: var(--text);
 }
 .subtitle {
   font-size: 13px;
@@ -50,16 +47,22 @@ html, body {
 }
 
 .btn {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  padding: 10px 14px;
-  border-radius: 12px;
+  border: none;
+  background: var(--accent);
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 10px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 14px;
 }
-.btn:hover { background: rgba(255, 255, 255, 0.12); }
-.btnStop { border-color: rgba(255, 92, 122, 0.35); }
+.btn:hover { background: #d4ff1a; }
+.btnStop {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btnStop:hover { background: rgba(255,255,255,0.05); }
 
 .grid {
   display: grid;
@@ -73,20 +76,24 @@ html, body {
 
 .card {
   border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  background: var(--panel);
   border-radius: 16px;
   padding: 16px;
 }
 .cardTitle {
   font-weight: 800;
   margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .video {
   width: 100%;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(0,0,0,0.35);
+  background: #000;
 }
 
 .hint {
@@ -104,18 +111,20 @@ html, body {
 .metric {
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 12px;
-  background: rgba(255,255,255,0.06);
+  padding: 14px;
+  background: var(--panel2);
 }
 .metricLabel {
   font-size: 12px;
   color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 .metricValue {
-  margin-top: 6px;
-  font-size: 22px;
+  margin-top: 8px;
+  font-size: 26px;
   font-weight: 900;
-  letter-spacing: 0.2px;
+  color: var(--accent);
 }
 
 .small {
@@ -135,7 +144,7 @@ html, body {
   border: 1px solid rgba(255, 92, 122, 0.35);
   background: rgba(255, 92, 122, 0.10);
   border-radius: 12px;
-  color: rgba(255,255,255,0.92);
+  color: var(--text);
   font-size: 12px;
   white-space: pre-wrap;
 }
@@ -155,21 +164,20 @@ html, body {
   color: var(--muted);
   margin-bottom: 6px;
 }
-.field input[type="text"], .field input:not([type]) , .field input[type="url"], .field input[type="number"], .field input[type="range"], .field input {
+.field input {
   width: 100%;
   box-sizing: border-box;
-}
-.field input {
   border: 1px solid var(--border);
-  background: rgba(0,0,0,0.25);
+  background: #0a0a0a;
   color: var(--text);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 10px 12px;
   outline: none;
 }
 .field input[type="range"] {
   padding: 0;
   height: 28px;
+  accent-color: var(--accent);
 }
 .value {
   font-size: 12px;
@@ -180,4 +188,3 @@ html, body {
 .footer {
   margin-top: 14px;
 }
-
